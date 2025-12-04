@@ -1,0 +1,3 @@
+The scripts in this directory contain the experiment scripts done in the paper. 
+The classification folder contains the scripts used to generate figures 2 and 3. These scripts should be run before running any scripts in visualisation.
+The early_detection directory contains scripts used in generating 2b while the perturbation directory contains scripts needed to generated figure 2c. Detection_evade contains the code to classify on the generated trajectories that simulate account hijacking (figure 3c)

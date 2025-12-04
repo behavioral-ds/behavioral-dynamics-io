@@ -1,0 +1,10 @@
+{
+    "collection_start_date": 2015, 
+    "collection_end_date": 2022,
+    "root_output_dir_path": "OUTPUT_FOLDER_PATH",
+    "interested_usernames_path": "PICKLED_PYTHON_LIST_OF_STRING_OF_USERNAMES", 
+    "raw_comment_folder_path": "path_to_raw_reddit_comment_dumps_in_format_RC_${year}",
+    "raw_submission_folder_path": "path_to_raw_reddit_submission_dumps_in_format_RS_${year}", 
+    "deberta_weight_path": "path_to_pretrained_finetuned_deberta_model",
+    "trolls_list_path": "./reddit-suspicious-accounts.csv"
+}
