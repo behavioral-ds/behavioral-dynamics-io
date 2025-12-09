@@ -50,7 +50,7 @@ Scripts for processing raw Reddit data and constructing user trajectories are lo
 - An additional file listing the organic users used in this work.
 
 > **Important (Ethics):**
-The list of organic users cannot be shared publicly due to ethics and privacy constraints. To reproduce the full dataset, you will need access to a comparable set of organic users from Reddit and must obtain appropriate ethics approval for your institution.
+> The list of organic users cannot be shared publicly due to ethics and privacy constraints. To reproduce the full dataset, you will need access to a comparable set of organic users from Reddit and must obtain appropriate ethics approval for your institution.
 
 To reproduce our data processing pipeline, run each of the scripts inside `raw_dump_processing/` in order of the number at the beginning of each script. 
 
