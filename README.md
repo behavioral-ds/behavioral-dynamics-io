@@ -4,6 +4,10 @@ This repository contains the code to reproduce the experiments and figures for t
 > *Beyond Content: Behavioral Policies Reveal Actors in Information Operations*
 XXX, _TBD_, 2025 (Under Review).
 
+The codebase builds on our earlier data-processing pipeline introduced in:
+> Lanqin Yuan, Philipp J. Schneider, and Marian-Andrei Rizoiu. 2025. Behavioral Homophily in Social Media via Inverse Reinforcement Learning: A Reddit Case Study. In Proceedings of the ACM Web Conference 2025 (WWW ’25), 576–589.
+https://doi.org/10.1145/3696410.3714618
+
 Repository is organised into three sections: Data processing, classification, and visualisation. 
 
 ## Data Processing
