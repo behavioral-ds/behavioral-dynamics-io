@@ -51,10 +51,10 @@ Scripts for processing raw Reddit data and constructing user trajectories are lo
 > **Important (Ethics):**
 The list of organic users cannot be shared publicly due to ethics and privacy constraints. To reproduce the full dataset, you will need access to a comparable set of organic users from Reddit and must obtain appropriate ethics approval for your institution.
 
-To recreate our data processing process, run each of the scripts inside `raw_dump_processing' in order of the number at the beginning of each script. 
+To reproduce our data processing pipeline, run each of the scripts inside `raw_dump_processing/` in order of the number at the beginning of each script. 
 
 Each script reads the outputs of the previous step and writes intermediate results to `data/processed/` (or the path specified in the script). The final outputs are:
-- A set of user trajectories (trolls and organics) with state–action sequences.
+- A set of user trajectories (trolls and organic users) with state–action sequences.
 - Metadata used downstream for policy inference and classification.
 
 ## 4. Policy Inference
@@ -72,7 +72,7 @@ These scripts assume that all preprocessing steps in `raw_dump_processing/` have
 Classification experiments are located under `experiments/`. These scripts:
 - Load the inferred policies (policy-based representations).
 - Load content-based representations (e.g. text embeddings).
-- Train and evaluate classifiers (random forest, gradient boosting).
+- Train and evaluate classifiers (e.g. random forest, gradient boosting).
 
 ## 6. Visualization
 Figure-generation scripts are located in `visualization/`. They mainly take the result files from `experiments/` and other raw data and produce the plots shown in the paper.
