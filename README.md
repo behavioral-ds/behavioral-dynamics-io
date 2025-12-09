@@ -74,8 +74,8 @@ Classification experiments are located under `experiments/`. These scripts:
 - Load content-based representations (e.g. text embeddings).
 - Train and evaluate classifiers (random forest, gradient boosting).
 
-## 6. Visualisation
-Figure-generation scripts are located in `visualisation/`. They mainly take the result files from `experiments/` and other raw data and produce the plots shown in the paper.
+## 6. Visualization
+Figure-generation scripts are located in `visualization/`. They mainly take the result files from `experiments/` and other raw data and produce the plots shown in the paper.
 
 ## 7. Citation
 If you use this codebase or build upon our methods, please cite:
