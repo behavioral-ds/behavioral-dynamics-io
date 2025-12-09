@@ -81,7 +81,7 @@ Figure-generation scripts are located in `visualisation/`. They mainly take the 
 If you use this codebase or build upon our methods, please cite:
 
 ```
-@article{schneider2025beyondcontent,
+@article{xxx2025beyondcontent,
   title        = {Beyond Content: Behavioral Policies Reveal Actors in Information Operations},
   author       = {XXX},
   journal      = {TBD (Under Review)},
@@ -102,3 +102,4 @@ If you use this codebase or build upon our methods, please cite:
 
 ## 8. Contact 
 For questions about the code or the paper, please contact:
+- XXX
