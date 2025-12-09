@@ -14,7 +14,7 @@ The repository is organized into three main components:
 
 ## 1. Getting Started
 
-- Python $\geq$ 3.10
+- Python >= 3.10
 - Install dependencies
 ```
 pip install -r requirements.txt
@@ -28,7 +28,7 @@ At a high level, the repository is organized as:
 ├── raw_dump_processing/    # Reddit dumps → cleaned user trajectories
 ├── policy_inference/       # IRL / GAIL / empirical policy inference
 ├── experiments/            # Classification experiments and evaluation
-├── visualisation/          # Plotting and figure generation
+├── visualization/          # Plotting and figure generation
 ├── requirements.txt        # Python dependencies
 └── README.md               # This file
 ```
