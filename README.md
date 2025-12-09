@@ -15,6 +15,10 @@ The repository is organized into three main components:
 ## 1. Getting Started
 
 - Python $\geq$ 3.10
+- Install dependencies
+```
+pip install -r requirements.txt
+```
 
 ## Data Processing
 
