@@ -1,15 +1,43 @@
-The scripts in this directory processes the raw dumps from Reddit. The scripts should be executed sequentially.
+## Raw Reddit Processing
 
------
-|1_extract_user_posts.py                      | extracts posts of interested users
-|2_parent_reply_posts.py                      | extracts parent and reply posts to the posts of the interested users
-|2.5_collate_parent_reply_posts.py            | collation
-|3_extract_submissions.py                     | extract submissions of interested users
-|4_per_user_processing.py                     | processes the posts and parent/replies, sorting them by individual user
-|4.5_collate_per_user.py                      | collation
-|5_agreement_classification.py                | agreement classification for user replies based on parent post
-|6_trajectory_construction.py                 | constructs trajectories for each user
-|7_create_sample_matched_df_w_perturb.ipynb   | creates dataframe with noise perturbations including no perturbations
-|8_content_embeddings                         | this folder contains scripts that embeds user content in posts and submissions using modernbert. These were run on a high performance computing cluster due to the high computation load.
-|9_create_first_n_df.ipynb                    | creates dataframe based on the first N activities of users. for use in experiments in classification/early_detection
-|10_simulate_trajectories_for_evasion.ipynb   | generates simulated account hijacking trajectories. For use in experiments in classification/detection_evade
+The scripts in this directory process the raw dumps from Reddit into user-level trajectories and related data.  
+They should be executed sequentially in the numeric order shown below.
+
+- `1_extract_user_posts.py`  
+  Extracts posts of the users of interest.
+
+- `2_parent_reply_posts.py`  
+  Extracts parent and reply posts to the posts of the users of interest.
+
+- `2.5_collate_parent_reply_posts.py`  
+  Collates the parent and reply posts into a single dataset.
+
+- `3_extract_submissions.py`  
+  Extracts submissions of the users of interest.
+
+- `4_per_user_processing.py`  
+  Processes posts and parent/replies, sorting them by individual user.
+
+- `4.5_collate_per_user.py`  
+  Collates per-user data into a single dataset.
+
+- `5_agreement_classification.py`  
+  Performs agreement classification for user replies, based on the parent post.
+
+- `6_trajectory_construction.py`  
+  Constructs trajectories for each user.
+
+- `7_create_sample_matched_df_w_perturb.ipynb`  
+  Creates a dataframe with noise perturbations (including the no-perturbation baseline).
+
+- `8_content_embeddings/`  
+  Contains scripts that embed user content in posts and submissions using ModernBERT.  
+  These were run on a high-performance computing cluster due to the computational load.
+
+- `9_create_first_n_df.ipynb`  
+  Creates a dataframe based on the first *N* activities of users  
+  (used in `experiments/classification/early_detection`).
+
+- `10_simulate_trajectories_for_evasion.ipynb`  
+  Generates simulated account-hijacking trajectories  
+  (used in `experiments/classification/detection_evade`).
