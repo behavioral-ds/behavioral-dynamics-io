@@ -25,7 +25,7 @@ pip install -r requirements.txt
 At a high level, the repository is organized as:
 ```
 .
-├── raw_dump_processing/    # Reddit dumps → cleaned user trajectories
+├── reddit_processing/      # Reddit dumps → cleaned user trajectories
 ├── policy_inference/       # IRL / GAIL / empirical policy inference
 ├── experiments/            # Classification experiments and evaluation
 ├── visualization/          # Plotting and figure generation
@@ -34,7 +34,7 @@ At a high level, the repository is organized as:
 ```
 
 You do **not** need to run all components if you only want to reproduce specific stages (e.g., classification on pre-computed policies), but the full pipeline is:
-1. `raw_dump_processing/`
+1. `reddit_processing/`
 2. `policy_inference/`
 3. `experiments/`
 4. `visualization/`
