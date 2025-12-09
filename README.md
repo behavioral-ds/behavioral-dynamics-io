@@ -1,13 +1,20 @@
 # Beyond Content: Behavioral Policies Reveal Actors in Information Operations
 
 This repository contains the code to reproduce the experiments and figures for the paper:
-> *Beyond Content: Behavioral Policies Reveal Actors in Information Operations*. XXX, _TBD_, 2025 (Under Review).
+> **Beyond Content: Behavioral Policies Reveal Actors in Information Operations**. XXX, _TBD_, 2025 (Under Review).
 
 The codebase builds on our earlier data-processing pipeline introduced in:
-> Lanqin Yuan, Philipp J. Schneider, and Marian-Andrei Rizoiu. 2025. *Behavioral Homophily in Social Media via Inverse Reinforcement Learning: A Reddit Case Study*. In _Proceedings of the ACM Web Conference 2025_ (WWW ’25), 576–589.
+> Lanqin Yuan, Philipp J. Schneider, and Marian-Andrei Rizoiu. 2025. **Behavioral Homophily in Social Media via Inverse Reinforcement Learning: A Reddit Case Study**. In _Proceedings of the ACM Web Conference 2025_ (WWW ’25), 576–589.
 https://doi.org/10.1145/3696410.3714618
 
-Repository is organised into three sections: Data processing, classification, and visualisation. 
+The repository is organized into three main components:
+1. **Data processing** – from raw Reddit dumps to user trajectories and inferred policies.
+2. **Classification experiments** – training and evaluating policy- and content-based classifiers.
+3. **Visualization** – scripts to reproduce the figures in the paper.
+
+## 1. Getting Started
+
+- Python $\geq$ 3.10
 
 ## Data Processing
 
