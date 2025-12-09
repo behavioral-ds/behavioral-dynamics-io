@@ -1,13 +1,9 @@
-"""
-Figure 5
-"""
-
 import os
+import pickle
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
-import pickle
 
 plt.rcParams.update({
     "text.usetex": True,

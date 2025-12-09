@@ -2,12 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
-from matplotlib.legend_handler import HandlerBase
-import matplotlib.ticker as mtick
-import seaborn as sns
 from matplotlib.lines import Line2D
-from matplotlib.patches import Patch, Rectangle  # Rectangle for IQR capsule
 
 plt.rcParams.update({
     "text.usetex": True,

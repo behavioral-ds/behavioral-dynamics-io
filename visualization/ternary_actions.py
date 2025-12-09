@@ -19,16 +19,13 @@ plt.rc('text.latex', preamble=r'\usepackage{amsmath, bm, mathrsfs, mathtools, co
 print("Loading and preparing data...")
 
 # Define file paths
-# troll_accounts_path = '../data-analysis/data-trolls/reddit-suspicious-accounts.csv'
 troll_accounts_path = '../data-analysis/sampled_matched_perturbed_df_final.pkl'
 active_content_path = '../data-analysis/data-analysis-timestamps/all_user_active_content_df.pkl'
 
 # Load the data
 try:
-    # df_trolls_list = pd.read_csv(troll_accounts_path)
     df_trolls_all = pd.read_pickle(troll_accounts_path)
     df_trolls = df_trolls_all[(df_trolls_all['perturb_percent'] == 0) & (df_trolls_all['russian'] == 1)]
-    # df_trolls_list['Username'] = df_trolls_list['Username'].str.replace(r'^u/', '', regex=True)
     trolls = set(df_trolls['user'])
 
     df_active = pd.read_pickle(active_content_path)

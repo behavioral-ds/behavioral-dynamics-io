@@ -1,14 +1,14 @@
 import os
+from typing import Callable, Tuple
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+
 from matplotlib.colors import to_rgba
 
 from joblib import Parallel, delayed
 from sklearn.manifold import TSNE
 import umap
-
-from typing import Callable, Tuple
 
 plt.rcParams.update({
     "text.usetex": True,

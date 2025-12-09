@@ -1,14 +1,9 @@
-"""
-Figure 4
-"""
-
 import os
+import pickle
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.legend_handler import HandlerBase
-import matplotlib.ticker as mtick
-import pickle
 
 plt.rcParams.update({
     "text.usetex": True,

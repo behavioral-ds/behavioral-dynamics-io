@@ -1,9 +1,9 @@
+import os
 import numpy as np
 import pandas as pd
-import os
 import matplotlib.pyplot as plt
+
 from sklearn.cluster import KMeans
-import numpy as np
 from matplotlib.patches import Patch
 from matplotlib.lines import Line2D
 
@@ -149,10 +149,6 @@ def plot_policy_radar_plot_multi(dfs: list, labels: list, save_name: str, colors
         for k in stats:
             stats[k] = close_loop(stats[k])
         stats_all.append(stats)
-
-    # # Color cycle
-    # colors = itertools.cycle(plt.cm.tab10.colors)
-    # color_list = [next(colors) for _ in range(len(dfs))]
 
     # Plot
     fig, ax = plt.subplots(figsize=(4, 4), subplot_kw=dict(polar=True))

@@ -295,31 +295,6 @@ for i, (cluster_name, n, _) in enumerate(cards):
         zorder=5
     )
 
-# Build quantiles (5,25,50,75,95) per displayed cluster & category
-# clusters[0] is non-trolls; clusters[1:] correspond to KMeans labels 0..n_clusters-1
-# q_stats = {}  # key: (cluster_name, category_short) -> (q05,q25,q50,q75,q95)
-
-# for i, (cluster_name, n, _) in display_order:
-#     if i == 0:
-#         M = non_troll_policies          # (N_non, 6), columns in new_order
-#     else:
-#         label_id = i - 1                # match list order: Troll Cluster 1 -> kmeans label 0, etc.
-#         M = troll_policies[klabels == label_id]  # (N_cluster, 6)
-
-#     if M.size == 0:
-#         # fallback to NaNs so nothing is drawn
-#         for j, cat_short in enumerate(cat_order):
-#             q_stats[(cluster_name, cat_short)] = (np.nan,)*5
-#         continue
-
-#     # (optional) ensure rows are probabilities (sum to 1); comment out if already normalized
-#     # s = M.sum(axis=1, keepdims=True); s[s == 0] = 1; M = M / s
-
-#     qs = np.percentile(M, [5,25,50,75,95], axis=0)  # shape (5, 6)
-#     for j, cat_short in enumerate(cat_order):
-#         q05, q25, q50, q75, q95 = qs[:, j]
-#         q_stats[(cluster_name, cat_short)] = (float(q05), float(q25), float(q50), float(q75), float(q95))
-
 q_stats = {}  # (cluster_name, category) -> (q05,q25,q50,q75,q95)
 
 for i, (cluster_name, n, _) in enumerate(cards):
