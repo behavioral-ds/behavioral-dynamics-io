@@ -1,4 +1,4 @@
-# Visualization
+## Visualization
 
 This folder contains all scripts used to reconstruct the plots in the paper.
 
