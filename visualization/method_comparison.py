@@ -39,27 +39,27 @@ class HandlerMultiPatch(HandlerBase):
 
 if __name__ == "__main__":
     save_folder = 'figures/'
-    base_path = '../../final-experiment-results'
+    base_path = '../final-experiment-results'
     os.makedirs(save_folder, exist_ok=True)
 
     zero_percent = 0.0
 
     experiments = {
-        'normalised_traj_count': 'State visitation',
+        'empirical_policies': 'Empirical',
         'gail_policies': 'GAIL', 
         'irl_policies': 'MaxEntDeepIRL',
         'modernbert_embeds_full': 'Embed'
     }
 
     label_map = {
-        'State visitation': 'Empirical',
+        'Empirical': 'Empirical',
         'GAIL': 'GAIL',
         'MaxEntDeepIRL': 'MaxEnt Deep IRL',
         'Embed': 'Embedding'
     }
 
     palette = {
-        'State visitation': '#3b7a75',
+        'Empirical': '#3b7a75',
         'GAIL': '#2a9d8f',
         'MaxEntDeepIRL': '#264653',
         'Embed': '#d4a373',
@@ -176,7 +176,7 @@ if __name__ == "__main__":
     plt.grid(axis='x', alpha=0.6, linestyle='--', linewidth=0.5, zorder=0)
 
     # Colors
-    policy_colors = [palette['State visitation'], palette['GAIL'], palette['MaxEntDeepIRL']] # Empirical, GAIL, MaxEnt Deep IRL
+    policy_colors = [palette['Empirical'], palette['GAIL'], palette['MaxEntDeepIRL']] # Empirical, GAIL, MaxEnt Deep IRL
     embed_color   = palette['Embed'] # Embedding
     patch_alpha = 0.7 
 
@@ -188,7 +188,7 @@ if __name__ == "__main__":
     embed_handle  = EmbedHandle()
 
     # Colors
-    policy_colors = [palette['State visitation'], palette['GAIL'], palette['MaxEntDeepIRL']]
+    policy_colors = [palette['Empirical'], palette['GAIL'], palette['MaxEntDeepIRL']]
     embed_color   = palette['Embed']
     patch_alpha   = 0.7
 
@@ -216,4 +216,5 @@ if __name__ == "__main__":
     save_name = os.path.join(save_folder, 'method-comparison.pdf')
     # Show the plot
     plt.savefig(save_name, bbox_inches='tight')
-    plt.show()
+    # plt.show()
+    plt.close(fig)

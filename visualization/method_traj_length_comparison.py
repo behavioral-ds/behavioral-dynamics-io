@@ -15,9 +15,9 @@ plt.rc('text.latex', preamble=r'\usepackage{amsmath, bm, mathrsfs, mathtools, co
 
 save_folder = 'figures/'
 # ---------- load ----------
-experiment_output_dir = "../../final-experiment-results/first_n_classification/"
+experiment_output_dir = "../final-experiment-results/first_n_classification/"
 
-state_count_results = pd.read_pickle(os.path.join(experiment_output_dir, "state_count_results.pkl"))
+state_count_results = pd.read_pickle(os.path.join(experiment_output_dir, "emp_policies_results.pkl"))
 gail_policies_results = pd.read_pickle(os.path.join(experiment_output_dir, "gail_policies_results.pkl"))
 irl_policies_results = pd.read_pickle(os.path.join(experiment_output_dir, "irl_policies_results.pkl"))
 embed_results = pd.read_pickle(os.path.join(experiment_output_dir, "embed_results.pkl"))
@@ -281,6 +281,6 @@ for i, method in enumerate(methods):
 
 plt.tight_layout(rect=(0,0,1,0.96))
 os.makedirs(save_folder, exist_ok=True)
-save_name = os.path.join(save_folder, 'trajectory-length.pdf')
+save_name = os.path.join(save_folder, 'method-traj-length-comparison.pdf')
 plt.savefig(save_name, bbox_inches="tight")
 plt.show()
