@@ -1,11 +1,9 @@
+import os
 import numpy as np
 import pandas as pd
-import os
-from collections import defaultdict
 import matplotlib.pyplot as plt
+
 from sklearn.cluster import KMeans
-from sklearn.metrics import pairwise_distances
-import numpy as np
 from matplotlib.path import Path
 from matplotlib.patches import PathPatch
 from matplotlib.lines import Line2D
@@ -23,6 +21,7 @@ plt.rcParams.update({
 plt.rc('text.latex', preamble=r'\usepackage{amsmath, bm, mathrsfs, mathtools, color}')
 
 save_folder = 'figures/'
+os.makedirs(save_folder, exist_ok=True)
 
 # Original names coming from your data/vectors:
 actions = [
@@ -55,7 +54,7 @@ def reorder_cols(M, idx):
     return M[:, idx]
 
 sampled_matched_gail_df = pd.read_pickle(
-    "../../../io-detection-reddit/data-analysis/sampled_matched_perturbed_df_w_gail_opt.pkl"
+    "../data-analysis/sampled_matched_perturbed_df_w_gail_opt.pkl"
 )
 
 # Baselines
@@ -417,7 +416,6 @@ legend.get_title().set_position((9, 0))
 ax.spines['polar'].set_visible(False)
 
 # Cosmetics
-# ax.set_ylim(0, bar_base + bars_max_len - 0.75)
 ax.set_ylim(0, bar_base + bars_max_len)
 ax.set_xticklabels([])
 ax.set_yticklabels([])
@@ -426,4 +424,5 @@ ax.grid(False)
 save_name = os.path.join(save_folder, 'clusters.pdf')
 # Show the plot
 plt.savefig(save_name, bbox_inches='tight', pad_inches=0.02)
-plt.show()
+# plt.show()
+plt.close(fig)

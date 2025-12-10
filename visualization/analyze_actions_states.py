@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
 from collections import Counter
 from variables import action_labels
 from variables import state_labels
@@ -76,9 +75,10 @@ def generate_frequency_plots(
         ha='left', va='bottom', fontsize=14, color='black')
 
     plt.tight_layout()
-    plt.savefig(f'figures/descriptive-statistics/states-actions-frequencies-{name}.pdf', 
+    plt.savefig(f'figures/states-actions-frequencies-{name}.pdf', 
                 facecolor='white', bbox_inches='tight')
-    plt.show()
+    # plt.show()
+    plt.close()
 
 
 def get_state_action_counts(df: pd.DataFrame, column: str):
@@ -103,27 +103,28 @@ def counter_to_array(counter_obj, num_items):
     return arr
 
 if __name__ == "__main__":
+    save_folder = 'figures/'
     folder_path = '../data-analysis/'
-    file_name_non_trolls = 'non_russian_df_full_traj.pkl'
-    file_name_trolls = 'sampled_matched_perturbed_df_final.pkl'
+    file_name_organics = 'organics_df_full_traj.pkl'
+    file_name_trolls = 'sampled_matched_perturbed_df.pkl'
     path_trolls = folder_path + file_name_trolls
-    path_non_trolls = folder_path + file_name_non_trolls
+    path_organics = folder_path + file_name_organics
     
     # Including perturbed versions
     df_trolls_p = pd.read_pickle(path_trolls)
-    df_non_trolls = pd.read_pickle(path_non_trolls)
+    df_organics = pd.read_pickle(path_organics)
     
     df_trolls = df_trolls_p[(df_trolls_p.perturb_percent == 0.0) & (df_trolls_p.russian == 1) & (df_trolls_p.run == 0)]
-    df_non_trolls = pd.read_pickle(path_non_trolls)
+    df_organics = pd.read_pickle(path_organics)
 
     s_counts_trolls, a_counts_trolls = get_state_action_counts(df=df_trolls, column='traj')
-    s_counts_non_trolls, a_counts_non_trolls = get_state_action_counts(df=df_non_trolls, column='traj')
+    s_counts_organics, a_counts_organics = get_state_action_counts(df=df_organics, column='traj')
 
     # Prints
     # print("Trolls - States:", s_counts_trolls)
     # print("Trolls - Actions:", a_counts_trolls)
-    # print("Non-trolls - States:", s_counts_non_trolls)
-    # print("Non-trolls - Actions:", a_counts_non_trolls)
+    # print("Organics - States:", s_counts_organics)
+    # print("Organics - Actions:", a_counts_organics)
 
     # Convert Counter objects to arrays
     num_states = len(state_labels)  # Should be 12
@@ -132,8 +133,8 @@ if __name__ == "__main__":
     s_counts_trolls_arr = counter_to_array(s_counts_trolls, num_states)
     a_counts_trolls_arr = counter_to_array(a_counts_trolls, num_actions)
     
-    s_counts_non_trolls_arr = counter_to_array(s_counts_non_trolls, num_states)
-    a_counts_non_trolls_arr = counter_to_array(a_counts_non_trolls, num_actions)
+    s_counts_organics_arr = counter_to_array(s_counts_organics, num_states)
+    a_counts_organics_arr = counter_to_array(a_counts_organics, num_actions)
 
     combined_counts_trolls = np.concatenate([s_counts_trolls_arr, a_counts_trolls_arr])
     combined_labels = state_labels + action_labels
@@ -144,8 +145,8 @@ if __name__ == "__main__":
     s_counts_trolls_arr = counter_to_array(s_counts_trolls, num_states)
     a_counts_trolls_arr = counter_to_array(a_counts_trolls, num_actions)
 
-    s_counts_non_trolls_arr = counter_to_array(s_counts_non_trolls, num_states)
-    a_counts_non_trolls_arr = counter_to_array(a_counts_non_trolls, num_actions)
+    s_counts_organics_arr = counter_to_array(s_counts_organics, num_states)
+    a_counts_organics_arr = counter_to_array(a_counts_organics, num_actions)
     
     generate_frequency_plots(
         s_counts_arr=s_counts_trolls_arr, 
@@ -154,7 +155,7 @@ if __name__ == "__main__":
     )
     
     generate_frequency_plots(
-        s_counts_arr=s_counts_non_trolls_arr, 
-        a_counts_arr=a_counts_non_trolls_arr, 
-        name='non-trolls'
+        s_counts_arr=s_counts_organics_arr, 
+        a_counts_arr=a_counts_organics_arr, 
+        name='organics'
     )

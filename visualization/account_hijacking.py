@@ -216,6 +216,6 @@ if __name__ == "__main__":
     plt.grid(True, axis="y", alpha=0.3)
     plt.tight_layout()
     os.makedirs(save_folder, exist_ok=True)
-    save_name = os.path.join(save_folder, f"simulate-mixed-policy-{classifier}.pdf")
+    save_name = os.path.join(save_folder, f"mixed-policy-{classifier}.pdf")
     plt.savefig(save_name, bbox_inches="tight")
     plt.show()

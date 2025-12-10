@@ -89,7 +89,7 @@ def plot_elbow_method(
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
     ax.grid(True, alpha=0.3, linestyle='-', linewidth=0.25, zorder=1)
-    fig.savefig('figures/k-means/elbow-method.pdf', facecolor='white', bbox_inches='tight')
+    fig.savefig('figures/elbow-method.pdf', facecolor='white', bbox_inches='tight')
     plt.close(fig)
 
 def plot_silhouette_score(
@@ -115,7 +115,7 @@ def plot_silhouette_score(
     ax.axvline(best_k, linestyle='--', color='green', label=f'Optimal $k$: {best_k}')
     ax.legend(frameon=True, framealpha=1.0, edgecolor='black', handlelength=1, fontsize=14, loc="upper right")
 
-    fig.savefig('figures/k-means/silhouette-score.pdf', facecolor='white', bbox_inches='tight')    
+    fig.savefig('figures/silhouette-score.pdf', facecolor='white', bbox_inches='tight')    
     plt.close(fig)
 
     print(f"The optimal number of clusters based on silhouette score is: {best_k}")
@@ -139,7 +139,7 @@ def plot_gap_statistic(
     ax.axvline(optimal_k, linestyle='--', color='green', label=f'Optimal $k$: {optimal_k}')
     ax.legend(frameon=True, framealpha=1.0, edgecolor='black', handlelength=1, fontsize=14, loc="upper left")
 
-    fig.savefig('figures/k-means/gap-statistic.pdf', facecolor='white', bbox_inches='tight') 
+    fig.savefig('figures/gap-statistic.pdf', facecolor='white', bbox_inches='tight') 
     plt.close(fig)   
     # Print the optimal number of clusters
     print(f"The optimal number of clusters based on gap statistic is: {optimal_k}")

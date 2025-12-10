@@ -53,12 +53,12 @@ def load_results(base_path, experiments, percents=None, key='f1_list_rf'):
 
 if __name__ == "__main__":
     save_folder = 'figures/'
-    classifier = 'rf' # 'rf' or 'xgb'
-    base_path = '../../final-experiment-results'
+    classifier = 'xgb' # 'rf' or 'xgb'
+    base_path = '../final-experiment-results'
     os.makedirs(save_folder, exist_ok=True)
 
     experiments = {
-        'normalised_traj_count': 'State visitation',
+        'empirical_policies': 'Empirical',
         'gail_policies': 'GAIL',
         'irl_policies': 'MaxEntDeepIRL'
     }
@@ -71,7 +71,7 @@ if __name__ == "__main__":
     percents = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 
     palette = {
-        'State visitation': '#3b7a75',
+        'Empirical': '#3b7a75',
         'GAIL': '#2a9d8f',
         'MaxEntDeepIRL': '#264653',
         'Embed': '#d4a373',
@@ -88,7 +88,7 @@ if __name__ == "__main__":
 
     for p in percents:
         print(f"\n--- Perturbation p = {p:.1f} ({p*100:.0f}%) ---")
-        for label in experiments.values():  # 'State visitation', 'GAIL', 'MaxEntDeepIRL'
+        for label in experiments.values():  # 'Empirical', 'GAIL', 'MaxEntDeepIRL'
             arr = np.asarray(data_dict[label].get(p, []), dtype=float)
             arr = arr[np.isfinite(arr)]
             if arr.size == 0:
@@ -104,13 +104,13 @@ if __name__ == "__main__":
     print("\n==============================================================\n")
 
     pretty_name = {
-        'State visitation': r'\textbf{Empirical}',
+        'Empirical': r'\textbf{Empirical}',
         'GAIL': r'\textbf{GAIL}',
         'MaxEntDeepIRL': r'\textbf{MaxEnt Deep IRL}',
     }
 
     markers = {
-        'State visitation': 'o',
+        'Empirical': 'o',
         'GAIL': 's',
         'MaxEntDeepIRL': 'D',
     }
@@ -248,6 +248,6 @@ if __name__ == "__main__":
         columnspacing=0.5
     )
 
-    save_name = os.path.join(save_folder, f'method-comparison-perturbation-{classifier}.pdf')
+    save_name = os.path.join(save_folder, f'method-perturbation-comparison-{classifier}.pdf')
     plt.savefig(save_name, bbox_inches='tight')
     plt.show()

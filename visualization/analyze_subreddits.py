@@ -1,9 +1,9 @@
+import os
 import pandas as pd
-import numpy as np
-from variables import action_labels_special
 
 if __name__ == "__main__":
-    df_trolls_p = pd.read_pickle('../data-analysis/sampled_matched_perturbed_df_final.pkl')
+    os.makedirs('exports/', exist_ok=True)
+    df_trolls_p = pd.read_pickle('../data-analysis/sampled_matched_perturbed_df.pkl')
     df_trolls = df_trolls_p[(df_trolls_p.perturb_percent == 0.0) & (df_trolls_p.russian == 1) & (df_trolls_p.run == 0)]
     trolls = set(df_trolls['user'].values)
 
@@ -41,6 +41,6 @@ if __name__ == "__main__":
     )
     
     # Save to file
-    with open('exports/troll_subreddits.tex', 'w') as f:
+    with open('exports/troll-subreddits.tex', 'w') as f:
         f.write(latex_code)
-    print("\nSaved to 'troll_subreddits.tex'")
+    print("\nSaved to 'troll-subreddits.tex'")
