@@ -309,7 +309,7 @@ def run_embedding_pipeline(
 # ----------------------------------------------------------------------
 
 def main():
-    pickle_path = "../../../io-detection-reddit/data-analysis/sampled_matched_perturbed_df_final.pkl"
+    pickle_path = "../data-analysis/sampled_matched_perturbed_df.pkl"
 
     # 1) Load and prepare data
     df = load_matched_df(pickle_path, perturb_percent=0.0)

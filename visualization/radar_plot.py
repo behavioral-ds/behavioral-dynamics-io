@@ -49,7 +49,7 @@ def reorder_cols(M, idx):
     return M[:, idx]
 
 sampled_matched_gail_df = pd.read_pickle(
-    "../../../io-detection-reddit/data-analysis/sampled_matched_perturbed_df_w_gail_opt.pkl"
+    "../data-analysis/sampled_matched_perturbed_df_w_gail_opt.pkl"
 )
 
 # Baselines

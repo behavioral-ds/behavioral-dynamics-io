@@ -1,7 +1,8 @@
+import os
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
-import numpy as np
 import mpltern
 
 plt.rcParams.update({
@@ -19,7 +20,7 @@ plt.rc('text.latex', preamble=r'\usepackage{amsmath, bm, mathrsfs, mathtools, co
 print("Loading and preparing data...")
 
 # Define file paths
-troll_accounts_path = '../data-analysis/sampled_matched_perturbed_df_final.pkl'
+troll_accounts_path = '../data-analysis/sampled_matched_perturbed_df.pkl'
 active_content_path = '../data-analysis/data-analysis-timestamps/all_user_active_content_df.pkl'
 
 # Load the data
@@ -151,9 +152,10 @@ def create_ternary_plot_mpltern(points, flag, save_dir='figures/', highlights=No
         hz = [d['r'] for d in highlights]
         ax.scatter(hx, hy, hz, marker='x', s=90, c=highlight_colors, linewidths=3, zorder=5)
 	
-	
+    os.makedirs(save_dir, exist_ok=True)
     fig.savefig(f'{save_dir}/ternary-{'trolls' if flag else 'organics'}.pdf', bbox_inches='tight')
-    plt.show()
+    # plt.show()
+    plt.close(fig)
 
 # =============================================================================
 # 4. SCRIPT EXECUTION
@@ -162,12 +164,12 @@ def create_ternary_plot_mpltern(points, flag, save_dir='figures/', highlights=No
 if __name__ == '__main__':
     # Separate the data
     df_trolls_actions = df_active[df_active['is_troll'] == True]
-    df_non_trolls_actions = df_active[df_active['is_troll'] == False]
+    df_organics_actions = df_active[df_active['is_troll'] == False]
     
     # Process each group
     print("Processing data for plotting...")
     troll_points = process_user_actions(df_trolls_actions)
-    non_troll_points = process_user_actions(df_non_trolls_actions)
+    organics_points = process_user_actions(df_organics_actions)
 
     highlight_users = ['petouchoque', 'TojatMalaron', 'xameg']
     highlight_colors = ["#E41A1C", "#1B9E77", "#17BECF"]
@@ -179,7 +181,7 @@ if __name__ == '__main__':
     print(f"\nGenerating plot for {len(troll_points)} trolls...")
     create_ternary_plot_mpltern(troll_points, True, highlights=troll_highlights, highlight_colors=highlight_colors)
     
-    print(f"\nGenerating plot for {len(non_troll_points)} organics...")
-    create_ternary_plot_mpltern(non_troll_points, False, highlights=None)
+    print(f"\nGenerating plot for {len(organics_points)} organics...")
+    create_ternary_plot_mpltern(organics_points, False, highlights=None)
     
     print("\nDone.")
