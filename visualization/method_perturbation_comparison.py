@@ -53,7 +53,7 @@ def load_results(base_path, experiments, percents=None, key='f1_list_rf'):
 
 if __name__ == "__main__":
     save_folder = 'figures/'
-    classifier = 'xgb' # 'rf' or 'xgb'
+    classifier = 'rf' # 'rf' or 'xgb'
     base_path = '../final-experiment-results'
     os.makedirs(save_folder, exist_ok=True)
 

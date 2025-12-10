@@ -28,7 +28,7 @@ def load_pickle(path):
 
 if __name__ == "__main__":
     save_folder = 'figures/'
-    base_path = '../../final-experiment-results'
+    base_path = '../final-experiment-results'
     data_dir = os.path.join(base_path, "detection_evade")
     os.makedirs(save_folder, exist_ok=True)
 
@@ -218,4 +218,5 @@ if __name__ == "__main__":
     os.makedirs(save_folder, exist_ok=True)
     save_name = os.path.join(save_folder, f"mixed-policy-{classifier}.pdf")
     plt.savefig(save_name, bbox_inches="tight")
-    plt.show()
+    # plt.show()
+    plt.close(fig)
