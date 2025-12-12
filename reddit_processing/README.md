@@ -37,7 +37,3 @@ They should be executed sequentially in the numeric order shown below.
 - `9_create_first_n_df.ipynb`  
   Creates a dataframe based on the first *N* activities of users  
   (used in `experiments/classification/early_detection`).
-
-- `10_simulate_trajectories_for_evasion.ipynb`  
-  Generates simulated account-hijacking trajectories  
-  (used in `experiments/classification/detection_evade`).

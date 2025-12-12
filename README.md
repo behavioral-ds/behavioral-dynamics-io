@@ -26,7 +26,7 @@ At a high level, the repository is organized as:
 ```
 .
 ├── reddit_processing/      # Reddit dumps → cleaned user trajectories
-├── policy_inference/       # IRL / GAIL / empirical policy inference
+├── policy_inference/       # IRL / GAIL inference
 ├── experiments/            # Classification experiments and evaluation
 ├── visualization/          # Plotting and figure generation
 ├── requirements.txt        # Python dependencies
