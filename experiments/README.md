@@ -9,7 +9,7 @@ The classification directory contains the scripts used to generate Figures 2 and
 Figure 2b.
 #### Perturbation
 Figure 2c.
-#### Detection Evade
+#### Detection Evasion
 Figure 3c. Scripts should be run in order.
 
 ### Clustering
