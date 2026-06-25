@@ -43,7 +43,7 @@ You do **not** need to run all components if you only want to reproduce specific
 
 ### Reddit Processing and Trajectory Construction
 
-Scripts for processing raw Reddit data and constructing user trajectories are located in `raw_dump_processing/`.
+Scripts for processing raw Reddit data and constructing user trajectories are located in `reddit_processing/`.
 
 **Inputs:**
 - Monthly Reddit comment and submission dumps from the Pushshift API (compressed JSON files).
